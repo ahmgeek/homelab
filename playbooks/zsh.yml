@@ -1,0 +1,15 @@
+- name: Install zsh on all hosts
+  hosts: "*"
+  tasks:
+    - name: install zsh
+      apt:
+        name: zsh
+        state: present
+        update_cache: yes
+      become: yes
+
+    - name: set default shell for users
+      become: yes
+      user:
+        name: 'ahmgeek'
+        shell: /bin/zsh

@@ -1,0 +1,9 @@
+- name: Install vim on all hosts
+  hosts: "*"
+  tasks:
+    - name: install vim
+      apt:
+        name: vim
+        state: present
+        update_cache: yes
+      become: yes
