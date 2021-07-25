@@ -1,0 +1,5 @@
+- name: Install plex on plex host
+  hosts: "plex"
+  roles:
+    - role: jonakoudijs.ansible_plex
+      become: yes
